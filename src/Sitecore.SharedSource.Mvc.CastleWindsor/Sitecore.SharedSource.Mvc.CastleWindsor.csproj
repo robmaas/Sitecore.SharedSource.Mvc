@@ -105,9 +105,11 @@
   <ItemGroup>
     <Content Include="App_Config\Include\Sitecore.SharedSource.Mvc.CastleWindsor.config" />
     <None Include="Global.asax" />
+    <None Include="Properties\PublishProfiles\DEVELOPMENT.pubxml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Container.cs" />
     <Compile Include="ControllerInstaller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -10,8 +10,8 @@
     {
         public void Process(PipelineArgs args)
         {
-            IWindsorContainer container = new WindsorContainer().Install(FromAssembly.This());
-            IControllerFactory controllerFactory = new WindsorControllerFactory(container.Kernel);
+            Container.InnerContainer.Install(FromAssembly.This());
+            IControllerFactory controllerFactory = new WindsorControllerFactory(Container.InnerContainer.Kernel);
             SitecoreControllerFactory sitecoreControllerFactory = new SitecoreControllerFactory(controllerFactory);
             System.Web.Mvc.ControllerBuilder.Current.SetControllerFactory(sitecoreControllerFactory);
         }
